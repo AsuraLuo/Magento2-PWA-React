@@ -27,6 +27,7 @@ atlassian*
 /lib/internal/flex/varien/.project
 /lib/internal/flex/varien/.settings
 /node_modules
+/release-pwa/node_modules
 /.grunt
 /Gruntfile.js
 /package.json
