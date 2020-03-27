@@ -1,0 +1,28 @@
+type Recipients {
+    name: String!
+    email: String!
+}
+
+mutation sendEmail($product_id: Int!, $name: String!, $email: String!, $message: String!, $recipients: [Recipients]) {
+    sendEmailToFriend(
+        input: {
+            product_id: $product_id,
+            sender: {
+                name: $name,
+                email: $email,
+                message: $message
+            },
+            recipients: $recipients
+        }
+    ){
+        recipients {
+            name
+            email
+        }
+        sender {
+            name
+            email
+            message
+        }
+    }
+}

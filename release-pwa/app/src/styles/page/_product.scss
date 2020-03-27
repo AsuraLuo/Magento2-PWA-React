@@ -1,0 +1,30 @@
+.v-product {
+    .in-wrapper {
+        grid-template-columns: 6fr 4fr;
+        grid-column-gap: 2rem;
+        grid-template-rows: min-content min-content;
+        padding-top: 2rem;
+        grid-column-gap: 4rem;
+        padding-bottom: 6rem;
+    }
+}
+
+.v-information {
+    padding: var(--product-information-padding);
+    background-color: var(--product-information-background);
+    border-top: 1px solid var(--expandable-content-divider-color);
+}
+
+.v-reviews {
+    padding: var(--product-reviews-padding);
+
+    .button {
+        position: absolute;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        height: max-content;
+        margin: auto;
+        z-index: 20;
+    }
+}

@@ -1,0 +1,124 @@
+input ProductAttributeFilterInput {
+    url_key: FilterEqualTypeInput!
+}
+
+input FilterEqualTypeInput {
+    eq: String
+    in: [String]
+}
+
+query getProductDetail($filter: ProductAttributeFilterInput!) {
+    products(filter: $filter) {
+        items {
+            id
+            sku
+            name
+            type_id
+            url_key
+            attribute_set_id
+            attributes {
+                attribute_code
+                attribute_id
+                attribute_label
+                attribute_options {
+                    label
+                    swatch_data {
+                        type
+                        value
+                    }
+                    value
+                }
+                attribute_type
+                attribute_value
+                entity_type
+            }
+            canonical_url
+            price_range {
+                minimum_price {
+                    final_price {
+                        value
+                    }
+                }
+            }
+            thumbnail {
+                label
+                url
+            }
+            small_image {
+                label
+                url
+            }
+            short_description {
+                html
+            }     
+            ...on ConfigurableProduct {
+                configurable_options {
+                    attribute_code
+                    attribute_id
+                    id
+                    product_id
+                    label
+                    values {
+                        label
+                        value_index
+                    } 
+                }
+            }
+            __typename
+            special_price
+            stock_status
+            meta_title
+            meta_keyword
+            meta_description
+            description {
+                html
+            }
+            media_gallery {
+                label
+                url
+                ... on ProductVideo {
+                    video_content {
+                        media_type
+                        video_provider
+                        video_url
+                        video_title
+                        video_description
+                        video_metadata
+                    }
+                }
+                __typename
+            }
+            product_links {
+                link_type
+                linked_product_sku
+                position
+            }
+            categories {
+                name
+                url_path
+                breadcrumbs {
+                    category_name
+                    category_url_key
+                    category_url_path
+                }
+            }
+            review_summary {
+                rating_summary
+                review_count
+            }
+            reviews {
+                created_at
+                detail
+                detail_id
+                nickname
+                review_id
+                status_id
+                title
+            }
+            new_from_date
+            new_to_date
+            special_from_date
+            special_to_date
+        }
+    }
+}

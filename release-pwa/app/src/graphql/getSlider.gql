@@ -1,0 +1,19 @@
+query getSlider {
+    slider {
+        banner {
+            banner_id
+            end_time
+            height
+            image
+            image_alt
+            order_banner
+            slider_id
+            slider_type
+            start_time
+            status
+            title
+            url
+            width
+        }
+    }
+}

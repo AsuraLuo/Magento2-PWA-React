@@ -1,0 +1,14 @@
+.v-footer {
+    font-size: var(--footer-font-size);
+    height: var(--footer-height);
+
+    .v-links {
+        display: flex;
+        justify-content: center;
+
+        li {
+            display: block;
+            margin: 0 1rem;
+        }
+    }
+}

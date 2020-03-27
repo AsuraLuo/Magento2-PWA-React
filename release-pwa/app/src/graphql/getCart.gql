@@ -1,0 +1,50 @@
+query getCart($cart_id: String!) {
+    cart(cart_id: $cart_id) {
+        items {
+            id
+            product {
+                id
+                name
+                sku
+            }
+            quantity
+        }
+        prices {
+            applied_taxes {
+                label
+                amount {
+                    value
+                }
+            }
+            grand_total {
+                value
+            }
+            subtotal_excluding_tax {
+                value
+            }
+            subtotal_including_tax {
+                value
+            }
+            subtotal_with_discount_excluding_tax {
+                value
+            }
+        }
+        applied_coupon {
+            code
+        }
+        shipping_addresses {
+            selected_shipping_method {
+                carrier_code
+                carrier_title
+                method_code
+                method_title
+                amount {
+                    value
+                }
+                base_amount {
+                    value
+                }
+            }
+        }
+    }
+}

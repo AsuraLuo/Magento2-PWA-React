@@ -1,0 +1,7 @@
+query validateRouter($url: String!) {
+    urlResolver(url: $url) {
+        redirectCode
+        relative_url
+        type
+    }
+}

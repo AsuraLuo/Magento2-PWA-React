@@ -1,0 +1,9 @@
+query getCmsBlock($identifiers: [String]) {
+    cmsBlocks(identifiers: $identifiers) {
+        items {
+            identifier
+            title
+            content
+        }
+    }
+}

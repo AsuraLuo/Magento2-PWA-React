@@ -1,0 +1,11 @@
+.v-media {
+    display: grid;
+    grid-template-columns: 150px 1fr;
+    grid-gap: 1.5rem;
+    max-height: 40rem;
+
+    .in-thumb {
+        display: grid;
+        grid-gap: 1.5rem;
+    }
+}

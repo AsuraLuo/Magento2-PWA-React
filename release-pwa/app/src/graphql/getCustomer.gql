@@ -1,0 +1,48 @@
+query getCustomer() {
+    customer {
+        addresses {
+            city
+            company
+            country_id
+            customer_id
+            default_billing
+            default_shipping
+            fax
+            firstname
+            id
+            lastname
+            middlename
+            postcode
+            prefix
+            region {
+                region
+                region_code
+                region_id
+            }
+            region_id
+            street
+            suffix
+            telephone
+            vat_id
+            custom_attributes {
+                attribute_code
+                value
+            }
+        }
+        created_at
+        default_billing
+        default_shipping
+        dob
+        email
+        firstname
+        gender
+        group_id
+        id
+        is_subscribed
+        lastname
+        middlename
+        prefix
+        suffix
+        taxvat
+    }
+}

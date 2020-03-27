@@ -1,0 +1,46 @@
+mutation addSimpleCart ($cart_id: String!, $quantity: Float!, $sku: String!) {
+    addConfigurableProductsToCart(
+        input: {
+            cart_id: $cart_id, 
+            cart_items: {
+                data: { 
+                    quantity: $quantity, 
+                    sku: $sku 
+                },
+                customizable_options: {},
+                variant_sku: ''
+            }
+        })
+    {
+        cart {
+            items {
+                id
+                product {
+                    name
+                    sku
+                }
+                quantity
+            }
+            prices {
+                applied_taxes {
+                    label
+                    amount {
+                        value
+                    }
+                }
+                grand_total {
+                    value
+                }
+                subtotal_excluding_tax {
+                    value
+                }
+                subtotal_including_tax {
+                    value
+                }
+                subtotal_with_discount_excluding_tax {
+                    value
+                }
+            }
+        }
+    }
+}

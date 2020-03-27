@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <head>
+        <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
+        <meta name="renderer" content="webkit" />
+        <meta name="author" content="caesar" />
+        <meta name="apple-mobile-web-app-title" content="PWA" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+        <meta name="apple-itunes-app" content="app-id=myAppStoreID, affiliate-data=myAffiliateData, app-argument=myURL" />
+        <meta name="HandheldFriendly" content="true" />  
+        <meta name="screen-orientation" content="portrait" />  
+        <meta name="format-detection" content="telephone=no, email=no" />
+        <meta name="full-screen" content="yes" />  
+        <meta name="x5-page-mode" content="app" />  
+        <meta name="x5-fullscreen" content="true" />
+        <meta name="msapplication-tap-highlight" content="no" />
+        <meta name="og:title" content="PWA" />
+        <meta name="og:description" content="PWA" />
+        <css src="css/app.bundle.css" />
+        <remove src="mage/calendar.css" />
+        <remove src="Magefan_Blog::css/blog-m.css" />
+        <remove src="Magefan_Blog::css/blog-custom.css" />
+        <remove src="requirejs/require.js" />
+        <remove src="mage/polyfill.js" />
+    </head>
+</page>

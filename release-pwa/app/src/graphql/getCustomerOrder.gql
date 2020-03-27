@@ -1,0 +1,11 @@
+query getCustomerOrder() {
+    customerOrders {
+        items {
+            id
+            increment_id
+            grand_total
+            status
+            created_at
+        }
+    }
+}

@@ -1,0 +1,69 @@
+mutation applyCoupon($cart_id: String!, $coupon_code: String!) {
+    applyCouponToCart(
+        input: {
+            cart_id: $cart_id,
+            coupon_code: $coupon_code
+        }
+    ){
+        cart {
+            items {
+                id
+                product {
+                    id
+                    name
+                    sku
+                }
+                quantity
+            }
+            prices {
+                applied_taxes {
+                    label
+                    amount {
+                        currency
+                        value
+                    }
+                }
+                grand_total {
+                    value
+                }
+                subtotal_excluding_tax {
+                    value
+                }
+                subtotal_including_tax {
+                    value
+                }
+                subtotal_with_discount_excluding_tax {
+                    value
+                }
+            }
+            applied_coupon {
+                code
+            }
+            shipping_addresses {
+                available_shipping_methods {
+                    amount {
+                        value
+                    }
+                    available
+                    carrier_code
+                    carrier_title
+                    method_code
+                    method_title
+                }
+                selected_shipping_method {
+                    amount {
+                        value
+                    }
+                    carrier_code
+                    carrier_title
+                    method_code
+                    method_title
+                }
+            }
+            available_payment_methods {
+                code
+                title
+            }
+        }
+    }
+}

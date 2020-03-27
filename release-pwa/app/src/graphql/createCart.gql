@@ -1,0 +1,5 @@
+mutation createCart($cart_id: String) {
+    createEmptyCart(input: {
+        cart_id: $cart_id
+    })
+}

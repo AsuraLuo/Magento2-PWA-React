@@ -1,0 +1,18 @@
+.v-main {
+    min-height: calc(100vh - var(--header-height) - var(--footer-height));
+    max-width: 100vw;
+}
+
+img {
+    object-position: 50% 50%;
+    object-fit: contain;
+}
+
+.in-wrapper {
+    display: grid;
+    max-width: var(--content-wrapper-width);
+    padding-left: 1rem;
+    padding-right: 1rem;
+    margin-left: auto;
+    margin-right: auto;
+}

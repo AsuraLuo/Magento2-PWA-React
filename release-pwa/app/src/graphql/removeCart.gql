@@ -1,0 +1,44 @@
+mutation removeCart($cart_id: String!, $cart_item_id: Int!) {
+    removeItemFromCart(
+        input: {
+            cart_id: $cart_id,
+            cart_item_id: $cart_item_id
+        }
+    ){
+        cart {
+            items {
+                id
+                product {
+                    id
+                    name
+                    sku
+                }
+                quantity
+            }
+            prices {
+                applied_taxes {
+                    label
+                    amount {
+                        currency
+                        value
+                    }
+                }
+                grand_total {
+                    value
+                }
+                subtotal_excluding_tax {
+                    value
+                }
+                subtotal_including_tax {
+                    value
+                }
+                subtotal_with_discount_excluding_tax {
+                    value
+                }
+            }
+            applied_coupon {
+                code
+            }
+        }
+    }
+}

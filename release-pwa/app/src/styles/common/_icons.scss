@@ -1,0 +1,27 @@
+.mdi {
+    &::before {
+        font-family: $font_family_icon;
+        font-size: 1.6rem;
+        font-style: normal;
+        display: inline-block;
+        vertical-align: middle;
+    }
+
+    &-account {
+        &::before {
+            content: '\e60e';
+        }
+    }
+
+    &-cart {
+        &::before {
+            content: '\e604';
+        }
+    }
+
+    &-star {
+        &::before {
+            content: '\e761';
+        }
+    }
+}

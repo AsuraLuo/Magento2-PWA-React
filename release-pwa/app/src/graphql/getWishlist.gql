@@ -1,0 +1,57 @@
+query getWishlist() {
+    wishlist {
+        items {
+            added_at
+            description
+            id
+            product {
+                id
+                name
+                sku
+                type_id
+                image {
+                    label
+                    url
+                }
+                price {
+                    maximalPrice {
+                        amount {
+                            currency
+                            value
+                        }
+                    }
+                    minimalPrice {
+                        amount {
+                            currency
+                            value
+                        }
+                    }
+                    regularPrice {
+                        amount {
+                            currency
+                            value
+                        }
+                    }
+                }
+                swatch_image
+                special_price
+                url_key
+                url_path
+                new_from_date
+                new_to_date
+                special_from_date
+                special_to_date
+                short_description {
+                    html
+                }
+                created_at
+                updated_at
+            }
+            qty
+        }
+        items_count
+        name
+        sharing_code
+        updated_at
+    }
+}

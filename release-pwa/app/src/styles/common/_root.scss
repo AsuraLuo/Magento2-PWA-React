@@ -1,0 +1,54 @@
+:root {
+    --primary-divider-color: #f0f0f0;
+    --secondary-error-color: #fff;
+    --primary-error-color: #dc6d6d;
+    --secondary-success-color: #fff;
+    --primary-success-color: #7fcd91;
+    --secondary-info-color: #79632e;
+    --primary-info-color: #ffd166;
+    --primary-base-color: var(--imported_primary_base_color,#f26323);
+    --primary-dark-color: var(--imported_primary_dark_color,#d1490c);
+    --primary-light-color: var(--imported_primary_light_color,#f69e77);
+    --secondary-base-color: var(--imported_secondary_base_color,#eee);
+    --secondary-dark-color: var(--imported_secondary_dark_color,#929292);
+    --secondary-light-color: var(--imported_secondary_light_color,#f8f8f8);
+    --header-height: 60px;
+    --content-wrapper-width: 1400px;
+    --overlay-background: #fff;
+    --footer-font-size: 12px;
+    --footer-height: 150px;
+    --category-details-background: var(--secondary-base-color);
+
+    // Vedio
+    --video-play-background: #000;
+    --video-play-icon-fill: #fff;
+    --video-play-icon-transform: scale(1);
+
+    // Input
+    --input-border-color: #e0e0e0;
+    --input-background-color: #fff;
+    --input-padding: 13px 20px;
+
+    --option-position: relative;
+    --option-background-color: #fff;
+    --option-check-mark-background: #0a0a0a;
+    --option-padding: 0 12px;
+    --option-margin: 0;
+    --option-size: 33px;
+    --option-text-color: #979797;
+    --option-border-color: #979797;
+
+    --placeholder-image: linear-gradient(90deg,#ebebeb 0,#d9d9d9 15%,#ebebeb 30%);
+    --placeholder-size: 1200px 100%;
+    --placeholder-animation: placeholderAnimation 2s linear infinite;
+
+
+    // Product
+    --product-configurable-attributes-direction: flex-start;
+    --product-configurable-attributes-margin: 0;
+    --product-configurable-attributes-content-padding: 0;
+    --product-information-background: var(--secondary-base-color);
+    --product-information-padding: 1.875rem 0;
+    --product-review-list-border: var(--secondary-dark-color);
+    --product-reviews-padding: 1.875rem 0;
+}

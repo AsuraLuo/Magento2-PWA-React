@@ -1,0 +1,33 @@
+input BlogPostsFilterInput {
+    author_id: FilterTypeInput!
+    category_id: FilterTypeInput!
+}
+
+input FilterTypeInput {
+    eq: String
+    like: String
+}
+
+query getBlogPosts($filter: BlogPostsFilterInput!, $pageSize: Int!, $currentPage: Int!, $sort: [String]) {
+    blogPosts(filter: $filter, pageSize: $pageSize, currentPage: $currentPage, sort: $sort) {
+        items {
+            author {
+                name
+                title
+                url
+                is_active
+            }
+            author_id
+            category_id
+            content
+            content_heading
+            creation_time
+            is_active
+            tag_id
+            title
+            views_count
+        }
+        total_count
+        total_pages
+    }
+}

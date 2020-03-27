@@ -1,0 +1,59 @@
+mutation createCustomer($prefix: String, $firstname: String, $middlename: String, $lastname: String, $suffix: String, $gender: Int, $email: String, $password: String, $taxvat: String, $dob: String, $is_subscribed: Boolean) {
+    createCustomer(
+        input: {
+            prefix: $prefix,
+            firstname: $firstname,
+            middlename: $middlename,
+            lastname: $lastname,
+            suffix: $suffix,
+            gender: $gender,
+            email: $email,
+            password: $password,
+            taxvat: $taxvat,
+            dob: $dob,
+            is_subscribed: $is_subscribed
+        }
+    ){
+        customer {
+            addresses {
+                city
+                company
+                country_id
+                customer_id
+                default_billing
+                default_shipping
+                fax
+                firstname
+                id
+                lastname
+                middlename
+                postcode
+                prefix
+                region
+                region_id {
+                    region
+                    region_code
+                }
+                street
+                suffix
+                telephone
+                vat_id
+            }
+            created_at
+            default_billing
+            default_shipping
+            dob
+            email
+            firstname
+            gender
+            group_id
+            id
+            is_subscribed
+            lastname
+            middlename
+            prefix
+            suffix
+            taxvat
+        }
+    }
+}

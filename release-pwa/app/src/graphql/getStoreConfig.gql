@@ -1,0 +1,33 @@
+query getStoreConfig {
+    storeConfig {
+        base_currency_code
+        base_link_url
+        base_media_url
+        base_static_url
+        base_url
+        catalog_default_sort_by
+        category_url_suffix
+        code
+        copyright
+        grid_per_page
+        grid_per_page_values
+        header_logo_src
+        list_mode
+        list_per_page
+        list_per_page_values
+        locale
+        logo_alt
+        logo_height
+        logo_width
+        header_logo_src
+        product_url_suffix
+        secure_base_link_url
+        secure_base_media_url
+        secure_base_static_url
+        secure_base_url
+        show_cms_breadcrumbs
+        store_name
+        timezone
+        welcome
+    }
+}

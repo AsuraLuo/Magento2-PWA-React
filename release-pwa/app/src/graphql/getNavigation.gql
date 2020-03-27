@@ -1,0 +1,38 @@
+input CategoryFilterInput {
+    ids: FilterEqualTypeInput!
+}
+
+input FilterEqualTypeInput {
+    eq: String
+    in: [String]
+}
+
+query getNavigation($filters: CategoryFilterInput!) {
+    categoryList(filters: $filters) {
+        id
+        name
+        meta_description
+        meta_keywords
+        meta_title
+        include_in_menu
+        children_count
+        url_key
+        url_path
+        children {
+            id
+            name
+            include_in_menu
+            children_count
+            url_key
+            url_path
+            children {
+                id
+                name
+                include_in_menu
+                children_count
+                url_key
+                url_path
+            }
+        }
+    }
+}

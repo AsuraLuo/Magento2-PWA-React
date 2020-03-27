@@ -1,0 +1,9 @@
+query getCmsPage($identifier: String) {
+    cmsPage(identifier: $identifier) {
+        title
+        content
+        meta_title
+        meta_keywords
+        meta_description
+    }
+}

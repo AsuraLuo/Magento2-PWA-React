@@ -1,0 +1,8 @@
+$font_family_icon: 'mdi';
+
+@include lib-font-face(
+    $family-name: $font_family_icon,
+    $font-path: 'fonts/iconfont',
+    $font-weight: normal,
+    $font-style: normal
+);

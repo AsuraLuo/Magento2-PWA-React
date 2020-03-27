@@ -1,0 +1,11 @@
+mutation placeOrder($cart_id: String!) {
+    placeOrder(
+        input: {
+            cart_id: $cart_id
+        }
+    ){
+        order {
+            order_id
+        }
+    }
+}
