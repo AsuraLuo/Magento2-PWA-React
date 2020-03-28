@@ -55,7 +55,7 @@ const baseConfig = new WebpackConfig({
         publicPath: '/',
         proxy: {
             '/graphql': {
-                target: 'http://dev.vue-pwa.cn/graphql',
+                target: 'http://dev.react-pwa.cn/graphql',
                 changeOrigin: true,
                 secure: false
             }

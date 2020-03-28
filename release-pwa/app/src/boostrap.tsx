@@ -1,74 +1,24 @@
-import Vue from 'vue'
-import Vuex from 'vuex'
-import * as VueHead from 'vue-head'
-import VueRouter from 'vue-router'
-import VueApollo from 'vue-apollo'
-import VueLazyload from 'vue-lazyload'
-import InfiniteLoading from 'vue-infinite-loading'
-import { sync } from 'vuex-router-sync'
-import { Component } from 'vue-property-decorator'
-import Vui from '../ui'
-import VApp from './app'
-import router from './router'
-import apolloOptions from './apollo'
-import { storeOption } from './store'
-import '../ui/scss/vui.scss'
-import './styles/pwa.scss'
+import * as React from 'react'
+import * as ReactDOM from 'react-dom'
+import { Store } from 'redux'
+import { Provider } from 'react-redux'
+import { ApolloProvider } from 'react-apollo'
+import apolloClient from './apollo/index'
+import configureStore from './store'
+import { App } from './app'
+// import './styles/pwa.scss'
 
-const Lazyload: any = VueLazyload
-const apolloProvider: VueApollo = new VueApollo({
-    ...apolloOptions
-})
+const store: Store = configureStore()
 
-Vue.config.productionTip = false
-Vue.use(Vuex)
-Vue.use(VueHead, {
-    separator: '-'
-})
-Vue.use(VueRouter)
-Vue.use(VueApollo)
-Vue.use(Lazyload.install, {
-    preLoad: 1.3,
-    error: '',
-    loading: '',
-    attempt: 1,
-    listenEvents: [
-        'scroll'
-    ]
-})
-Vue.use(InfiniteLoading, {
-    props: {
-        spinner: 'bubbles',
-        distance: 500,
-        forceUseInfiniteWrapper: true
-    },
-    system: {
-        throttleLimit: 50
-    },
-    slots: {
-        noResults: ``,
-        noMore: ``
-    }
-})
-Vue.use(Vui)
+const render: Function = (Commponent: React.ComponentType) => {
+    ReactDOM.render(
+        <Provider store={store}>
+            <ApolloProvider client={apolloClient}>
+                <Commponent />
+            </ApolloProvider>
+        </Provider>, 
+        document.getElementById('app') as HTMLElement
+    )
+}
 
-Component.registerHooks([
-    'beforeRouteEnter',
-    'beforeRouteLeave',
-    'beforeRouteUpdate'
-])
-
-const store: any = new Vuex.Store({
-    ...storeOption
-})
-
-store.$apollo = apolloOptions
-sync(store, router)
-
-new Vue({
-    el: '#app',
-    router,
-    store,
-    apolloProvider,
-    render: h => h(VApp)
-})
+render(App)

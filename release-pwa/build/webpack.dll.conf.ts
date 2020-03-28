@@ -10,7 +10,7 @@ const { area, src } = themeConfig.default
 const baseConfig = new WebpackConfig({
     root:  path.join(__dirname, '../app'),
     entry: {
-        vendor: ['@babel/polyfill', 'intersection-observer', 'vue', 'vuex', 'unfetch', 'apollo-client', 'apollo-link', 'apollo-link-http', 'apollo-cache-inmemory', 'graphql-tag', 'vue-apollo', 'vue-lazyload', 'vee-validate']
+        vendor: ['react', 'react-dom', 'redux', 'react-redux', 'redux-thunk', 'redux-logger', 'apollo-client', 'apollo-link', 'apollo-link-http', 'apollo-cache-inmemory', 'graphql-tag', 'react-apollo', 'react-lazyload']
     },
     output: {
         path: path.join(__dirname, `../../app/design/${area}/${src}/web/js`),

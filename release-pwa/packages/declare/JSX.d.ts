@@ -1,14 +1,13 @@
-import Vue, { VNode } from 'vue'
+import React, { ReactElement } from 'react'
 
 declare global {
     namespace JSX {
-        interface Element extends VNode {}
-        interface ElementClass extends Vue {}
+        interface Element extends ReactElement {}
+        interface ElementClass extends React.Component {}
         interface ElementAttributesProperty {
-            $props: {}
+            props: {}
         }
         interface IntrinsicElements {
-            div: any,
             [key: string]: any
         }
         interface PropsType {

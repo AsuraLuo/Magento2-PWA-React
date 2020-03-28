@@ -1,31 +1,22 @@
-import Vue, { CreateElement } from 'vue'
-import { Component } from 'vue-property-decorator'
-import VHeader from '@components/header/header'
-import VBreadcrumbs from '@components/common/breadcrumbs'
-import VFooter from '@components/footer/footer'
+import * as React from 'react'
 
-@Component({
-    name: 'v-app',
-    components: {
-        VHeader,
-        VBreadcrumbs,
-        VFooter
+export class App extends React.Component<any, any> {
+    static displayName: string = `APP`
+
+    constructor(props: any) {
+        super(props)
     }
-})
-export default class VApp extends Vue {
-    protected render (h: CreateElement) {
+
+    componentDidMount() {
+        console.log(`Magento2 App is bootstrap ...`)
+    }
+
+    render() {
         return (
-            <div id="root">
-                <v-header></v-header>
-                <v-breadcrumbs></v-breadcrumbs>
-                <main class="v-main">
-                    <transition name="fade">
-                        <keep-alive>
-                            <router-view></router-view>
-                        </keep-alive>
-                    </transition>
+            <div className="rn-page">
+                <main className="rn-main">
+                    
                 </main>
-                <v-footer></v-footer>
             </div>
         )
     }

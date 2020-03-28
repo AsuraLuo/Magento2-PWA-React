@@ -68,21 +68,20 @@ const apolloLink: ApolloLink = middlewareLink.concat(httpLink)
 const apolloClient: any = new ApolloClient({
     link: errorLink.concat(apolloLink),
     cache,
-    connectToDevTools: true
+    connectToDevTools: true,
+    defaultOptions: {
+        watchQuery: {
+            fetchPolicy: 'cache-and-network',
+            errorPolicy: 'ignore'
+        },
+        query: {
+            fetchPolicy: 'network-only',
+            errorPolicy: 'all'
+        },
+        mutate: {
+            errorPolicy: 'all'
+        }
+    }
 })
 
-// Create the apolo options
-const apolloOptions: any = {
-    defaultClient: apolloClient,
-    defaultOptions: {
-        $query: {
-            loadingKey: 'loadding',
-            fetchPolicy: 'cache-and-network'
-        }
-    },
-    errorHandler: (error: any) => {
-        console.error(error)
-    }
-}
-
-export default apolloOptions
+export default apolloClient

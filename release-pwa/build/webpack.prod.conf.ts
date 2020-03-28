@@ -38,7 +38,7 @@ const baseConfig = new WebpackConfig({
         path: path.resolve(__dirname, `../../app/design/${area}/${src}/web/js/`),
         publicPath: path.resolve(__dirname, `../../app/design/${area}/${src}/web/js/`)
     },
-    mode: 'development',
+    mode: 'production',
     devtool: 'inline-source-map',
     performance: {
         hints: 'warning',
@@ -54,7 +54,7 @@ const baseConfig = new WebpackConfig({
         //     }
         // }),
         new webpack.DefinePlugin({
-            'process.env.NODE_ENV':  JSON.stringify('development')
+            'process.env.NODE_ENV':  JSON.stringify('production')
         }),
         new FirendlyErrorePlugin(),
         // new BundleAnalyzerPlugin({
@@ -95,7 +95,7 @@ const baseConfig = new WebpackConfig({
     optimization: {
         namedModules: false,
         namedChunks: false,
-        nodeEnv: 'development',
+        nodeEnv: 'production',
         flagIncludedChunks: true,
         occurrenceOrder: true,
         sideEffects: true,

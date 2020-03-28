@@ -1,5 +1,5 @@
-interface Window {
-    webkitAnimationEnd: any
-}
+declare module '*.jsx'
 
-declare module '*.svg'
+interface Window {
+    __REDUX_DEVTOOLS_EXTENSION_COMPOSE__: any
+}

@@ -1,25 +1,20 @@
-import { VuexConnector, VuexActionDebounce } from '../hook'
-import state from './state'
-import getters from './getters'
-import actions from './actions'
-import mutations from './mutations'
-import apolloPlugin from './plugins'
+import { createStore, Store, applyMiddleware, compose } from 'redux'
+import { composeWithDevTools } from 'redux-devtools-extension'
+import thunk from 'redux-thunk'
+import { createLogger } from 'redux-logger'
+import appReducer from './reducers'
 
-const storeOption: any = {
-    state: state,
-    getters,
-    actions,
-    mutations,
-    modules: {},
-    plugins: [
-        apolloPlugin,
-        VuexActionDebounce
-    ]
+const composeEnhancer: Function = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
+const configureStore: any = () => {
+    const store: Store = createStore(
+        appReducer,
+        // composeWithDevTools(),
+        composeEnhancer(
+            applyMiddleware(thunk, createLogger())
+        )
+    )
+
+    return store
 }
 
-const connector: VuexConnector = new VuexConnector(storeOption)
-
-export {
-    storeOption,
-    connector
-}
+export default configureStore

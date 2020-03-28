@@ -1,0 +1,29 @@
+{
+    "presets": [
+        [
+            "@babel/preset-env"
+        ],
+        "@babel/preset-typescript",
+        "@babel/preset-react"
+    ],
+    "plugins": [
+        ["babel-plugin-graphql-tag", { "importName": "graphql-tag", "strip": true }],
+        ["@babel/plugin-proposal-decorators", { "legacy": true }],
+        ["@babel/plugin-proposal-class-properties", { "loose": true }],
+        "@babel/plugin-syntax-dynamic-import",
+        "@babel/plugin-transform-runtime"
+    ],
+    "comments": false,
+    "env": {
+        "test": {
+            "presets": [
+                "@babel/preset-env",
+                "@babel/preset-typescript",
+                "@babel/preset-react"
+            ],
+            "plugins": [
+                "istanbul"
+            ]
+        }
+    }
+}
